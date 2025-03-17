@@ -1,0 +1,121 @@
+/* Estilos generales */
+body {
+    background-color: #000;
+    color: white;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Encabezado */
+header {
+    background-color: black;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 2.5em;
+}
+
+/* Estilos de navegación */
+nav h2 {
+    margin-top: 20px;
+    font-size: 1.8em;
+}
+
+/* Contenedor de categorías */
+.categorias {
+    list-style: none;
+    padding: 0;
+}
+
+/* Estilos para cada categoría en index.html */
+.categoria {
+    display: block;
+    width: 220px;
+    padding: 15px;
+    margin: 15px auto;
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    background-color: black;
+    color: white;
+    border: 3px solid #ff8800;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Efecto hover en categorías */
+.categoria:hover {
+    background-color: #ff8800;
+    color: black;
+    transform: scale(1.1);
+}
+
+/* Contenedor de los juegos */
+section {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+}
+
+/* Asegura la alineación correcta de los juegos */
+.juego {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    margin: 15px 0;
+    background-color: #222;
+    border: 2px solid #ff8800;
+    border-radius: 10px;
+}
+
+/* Imágenes de los juegos */
+.juego img {
+    width: 120px;
+    height: auto;
+    margin-left: 15px;
+    border-radius: 5px;
+}
+
+/* Contenedor de la información del juego */
+.info {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    padding: 0 20px;
+}
+
+/* Nombre del juego */
+h2 {
+    font-size: 1.5em;
+    color: #ff8800;
+    margin-bottom: 5px;
+}
+
+/* Descripción del juego */
+p {
+    font-size: 1em;
+    margin: 5px 0;
+}
+
+/* Precio alineado a la derecha */
+.precio {
+    font-weight: bold;
+    color: #ff8800 !important;
+    text-align: right;
+    width: 150px;
+}
+
+/* Pie de página */
+footer {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: black;
+    font-size: 0.9em;
+}
