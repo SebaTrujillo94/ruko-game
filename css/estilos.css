@@ -119,3 +119,21 @@ footer {
     background-color: black;
     font-size: 0.9em;
 }
+/* Estilo para los campos inválidos */
+.is-invalid {
+    border: 2px solid #ff4d4d !important; /* Borde rojo más visible */
+    background-color: #220000 !important; /* Fondo oscuro para los campos con error */
+    color: white !important; /* Texto en blanco para mejor contraste */
+}
+
+/* Icono de error dentro de los inputs */
+.is-invalid:focus {
+    box-shadow: 0 0 10px #ff4d4d !important;
+}
+
+/* Mejorar la visibilidad de los mensajes de error */
+.invalid-feedback {
+    color: #ff8080 !important; /* Rojo más suave */
+    font-size: 0.9em; /* Tamaño más pequeño */
+    font-weight: bold;
+}

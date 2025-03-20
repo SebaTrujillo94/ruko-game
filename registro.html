@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Usuario - Ruko Game</title>
+    <!-- Enlace a Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center text-warning">Registro de Usuario</h2>
+        
+        <form id="registroForm" class="needs-validation" novalidate>
+            <div class="row">
+                <!-- Nombre Completo -->
+                <div class="col-md-6">
+                    <label for="nombre" class="form-label">Nombre Completo</label>
+                    <input type="text" class="form-control" id="nombre" required>
+                    <div class="invalid-feedback">Por favor, ingrese su nombre completo.</div>
+                </div>
+
+                <!-- Nombre de Usuario -->
+                <div class="col-md-6">
+                    <label for="usuario" class="form-label">Nombre de Usuario</label>
+                    <input type="text" class="form-control" id="usuario" required>
+                    <div class="invalid-feedback">El usuario no puede estar vacío.</div>
+                </div>
+            </div>
+
+            <div class="row mt-3">
+                <!-- Correo Electrónico -->
+                <div class="col-md-6">
+                    <label for="correo" class="form-label">Correo Electrónico</label>
+                    <input type="email" class="form-control" id="correo" required>
+                    <div class="invalid-feedback">Ingrese un correo válido.</div>
+                </div>
+
+                <!-- Fecha de Nacimiento -->
+                <div class="col-md-6">
+                    <label for="fechaNacimiento" class="form-label">Fecha de Nacimiento</label>
+                    <input type="date" class="form-control" id="fechaNacimiento" required>
+                    <div class="invalid-feedback">Ingrese su fecha de nacimiento.</div>
+                </div>
+            </div>
+
+            <div class="row mt-3">
+                <!-- Contraseña -->
+                <div class="col-md-6">
+                    <label for="clave" class="form-label">Contraseña</label>
+                    <input type="password" class="form-control" id="clave" required>
+                    <div class="invalid-feedback">Debe tener al menos 6 caracteres, una mayúscula y un número.</div>
+                </div>
+
+                <!-- Repetir Contraseña -->
+                <div class="col-md-6">
+                    <label for="repetirClave" class="form-label">Repetir Contraseña</label>
+                    <input type="password" class="form-control" id="repetirClave" required>
+                    <div class="invalid-feedback">Las contraseñas deben coincidir.</div>
+                </div>
+            </div>
+
+            <div class="row mt-3">
+                <!-- Dirección de Despacho -->
+                <div class="col-md-12">
+                    <label for="direccion" class="form-label">Dirección de Despacho (Opcional)</label>
+                    <input type="text" class="form-control" id="direccion">
+                </div>
+            </div>
+
+            <!-- Botones -->
+            <div class="d-flex justify-content-center mt-4">
+                <button type="submit" class="btn btn-warning me-2">Enviar</button>
+                <button type="reset" class="btn btn-secondary">Limpiar</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Scripts de Bootstrap y jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/validaciones.js"></script>
+</body>
+</html>
