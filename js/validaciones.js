@@ -1,6 +1,6 @@
 $(document).ready(function () {
     $("#registroForm").submit(function (event) {
-        event.preventDefault(); // Evita que el formulario se envíe por defecto
+        event.preventDefault(); // Evita el envío por defecto
 
         let valido = true;
 
@@ -18,50 +18,24 @@ $(document).ready(function () {
         // Expresión regular para validar la contraseña (mínimo 6 caracteres, una mayúscula y un número)
         let claveRegex = /^(?=.*[A-Z])(?=.*\d).{6,}$/;
 
-        // Validaciones de los campos
-        if (nombre === "") {
-            $("#nombre").addClass("is-invalid");
-            valido = false;
-        } else {
-            $("#nombre").removeClass("is-invalid").addClass("is-valid");
+        // Validar los campos
+        function validarCampo(id, condicion) {
+            if (condicion) {
+                $(id).removeClass("is-invalid").addClass("is-valid");
+            } else {
+                $(id).addClass("is-invalid");
+                valido = false;
+            }
         }
 
-        if (usuario === "") {
-            $("#usuario").addClass("is-invalid");
-            valido = false;
-        } else {
-            $("#usuario").removeClass("is-invalid").addClass("is-valid");
-        }
+        validarCampo("#nombre", nombre !== "");
+        validarCampo("#usuario", usuario !== "");
+        validarCampo("#correo", correoRegex.test(correo));
+        validarCampo("#fechaNacimiento", fechaNacimiento !== "");
+        validarCampo("#clave", claveRegex.test(clave));
+        validarCampo("#repetirClave", clave === repetirClave);
 
-        if (!correoRegex.test(correo)) {
-            $("#correo").addClass("is-invalid");
-            valido = false;
-        } else {
-            $("#correo").removeClass("is-invalid").addClass("is-valid");
-        }
-
-        if (fechaNacimiento === "") {
-            $("#fechaNacimiento").addClass("is-invalid");
-            valido = false;
-        } else {
-            $("#fechaNacimiento").removeClass("is-invalid").addClass("is-valid");
-        }
-
-        if (!claveRegex.test(clave)) {
-            $("#clave").addClass("is-invalid");
-            valido = false;
-        } else {
-            $("#clave").removeClass("is-invalid").addClass("is-valid");
-        }
-
-        if (clave !== repetirClave) {
-            $("#repetirClave").addClass("is-invalid");
-            valido = false;
-        } else {
-            $("#repetirClave").removeClass("is-invalid").addClass("is-valid");
-        }
-
-        // Si todo está válido, mostrar mensaje de éxito
+        // Si es válido, mostrar mensaje de éxito
         if (valido) {
             let mensajeExito = document.createElement("div");
             mensajeExito.innerHTML = "¡Registro exitoso! Bienvenido a Ruko Game.";
@@ -77,19 +51,19 @@ $(document).ready(function () {
             mensajeExito.style.fontSize = "18px";
             mensajeExito.style.boxShadow = "0px 4px 8px rgba(0, 0, 0, 0.5)";
             mensajeExito.style.zIndex = "9999";
-
+        
             document.body.appendChild(mensajeExito);
-
-            // Ocultar el mensaje después de 3 segundos
-            setTimeout(() => {
-                mensajeExito.remove();
-            }, 3000);
-
+        
             console.log("Formulario enviado correctamente.");
-            
+
             // Limpiar el formulario después de mostrar el mensaje
             $("#registroForm")[0].reset();
             $(".is-valid").removeClass("is-valid");
+        
+            // Redirigir automáticamente después de 3 segundos
+            setTimeout(function() {
+                window.location.replace("index.html");
+            }, 3000);
         }
     });
 });
